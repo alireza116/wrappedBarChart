@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>wrapped</title>
     <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://unpkg.com/d3-simple-slider/build/d3-simple-slider.js"></script>
+    <script src="https://unpkg.com/d3-simple-slider"></script>
     <style> /* set the CSS */
 
     .line {
@@ -46,7 +46,11 @@
     var strokeWidth = 10;
 
     var values = [8000,1750, 500, 2300 , 300 , 800,50,150, 5000, 1234];
+    values = values.sort(function(a,b){
+        return b-a
+    });
     var labels = ["a","b","c","d","E","f","GG","Hh", "asdoz","xcv"];
+
 
     // call Function to prepare data
     var data = prepareData(values,threshold,wrapThresh);
